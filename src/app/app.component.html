@@ -1,0 +1,29 @@
+<div [class.dark-theme] = "applyDarkTheme">
+<md-toolbar color="primary">
+ Angular Challenge
+ <button md-icon-button [md-menu-trigger-for]="menu">
+   <md-icon>more_vert</md-icon>
+ </button>
+</md-toolbar>
+<md-menu x-position="before" #menu="mdMenu">
+  <button md-menu-item (click)= "applyDarkTheme = !applyDarkTheme">Toggle Theme</button>
+</md-menu>
+<br/>
+<header>
+  <nav color="accent">
+    <ul>
+      <li>
+        <a [routerLink]="['/movies']">Favourite Movie</a>
+      </li>
+      <li>
+        <a [routerLink]="['/game']">Deck of cards</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section id="main">
+      <div class="inner-outlet">
+        <router-outlet></router-outlet>
+      </div>
+</section>
+</div>

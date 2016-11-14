@@ -1,0 +1,27 @@
+<div>
+  <header >
+    <div style="width: 300px; float: left;">
+      <md-card>
+        <md-card-title>
+            <span class="md-headline">Dealer</span>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+          <img alt="dealer" src="../../profile.jpg" style="height:300px;width:200px" />
+        </md-card-content>
+      </md-card>
+   </div>
+  </header>
+  <section>
+    <label *ngIf="!end">Choose Higher or Lower</label>
+    <button *ngIf="!end" md-raised-button color="primary" (click) = "showResult(1)">Higher</button>
+    <button *ngIf="!end" md-raised-button color="primary" (click) = "showResult(0)">Lower</button>
+    <button *ngIf="end" md-raised-button color="primary" (click) = "resetGame()">Try Again</button>
+  </section>
+  <br/>
+  <section>
+
+      <img *ngIf="drawnCards" [alt]="drawnCards.cards[0].value" src="{{drawnCards.cards[0].image}}" />
+      <img *ngIf="drawnCards && !showIt" alt="Guess your card" src="noImg" id="noImage" />
+      <img *ngIf="drawnCards && showIt" [alt]="drawnCards.cards[1].value" src="{{drawnCards.cards[1].image}}" />
+  </section>
+</div>
